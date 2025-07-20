@@ -1,62 +1,63 @@
 """Crop data including optimal conditions and recommendations"""
 
 import pandas as pd
+
 CROP_DATA = {
     "Rice": {
         "name": "Rice",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 800, "max": 2000}
-        }
+            "rainfall": {"min": 800, "max": 2000},
+        },
     },
     "Wheat": {
         "name": "Wheat",
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1200}
-        }
+            "rainfall": {"min": 500, "max": 1200},
+        },
     },
     "Maize": {
         "name": "Maize",
         "optimal_conditions": {
             "temperature": {"min": 18, "max": 32},
             "humidity": {"min": 50, "max": 75},
-            "rainfall": {"min": 600, "max": 1100}
-        }
+            "rainfall": {"min": 600, "max": 1100},
+        },
     },
     "Cotton": {
         "name": "Cotton",
         "optimal_conditions": {
             "temperature": {"min": 21, "max": 35},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1500}
-        }
+            "rainfall": {"min": 500, "max": 1500},
+        },
     },
     "Sugarcane": {
         "name": "Sugarcane",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 1000, "max": 2000}
-        }
+            "rainfall": {"min": 1000, "max": 2000},
+        },
     },
     "Potato": {
         "name": "Potato",
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 75},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Groundnut": {
         "name": "Groundnut",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1200}
-        }
+            "rainfall": {"min": 500, "max": 1200},
+        },
     },
     "Soybean": {
         "name": "Soybean",
@@ -64,64 +65,64 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Coconut": {
         "name": "Coconut",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 70, "max": 90},
-            "rainfall": {"min": 1500, "max": 2500}
-        }
+            "rainfall": {"min": 1500, "max": 2500},
+        },
     },
     "Banana": {
         "name": "Banana",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 70, "max": 90},
-            "rainfall": {"min": 1200, "max": 2200}
-        }
+            "rainfall": {"min": 1200, "max": 2200},
+        },
     },
     "Mango": {
         "name": "Mango",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 50, "max": 80},
-            "rainfall": {"min": 750, "max": 1500}
-        }
+            "rainfall": {"min": 750, "max": 1500},
+        },
     },
     "Tea": {
         "name": "Tea",
         "optimal_conditions": {
             "temperature": {"min": 18, "max": 30},
             "humidity": {"min": 70, "max": 90},
-            "rainfall": {"min": 1500, "max": 3000}
-        }
+            "rainfall": {"min": 1500, "max": 3000},
+        },
     },
     "Coffee": {
         "name": "Coffee",
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 28},
             "humidity": {"min": 70, "max": 90},
-            "rainfall": {"min": 1500, "max": 2500}
-        }
+            "rainfall": {"min": 1500, "max": 2500},
+        },
     },
     "Jute": {
         "name": "Jute",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 60, "max": 90},
-            "rainfall": {"min": 1200, "max": 2000}
-        }
+            "rainfall": {"min": 1200, "max": 2000},
+        },
     },
     "Rubber": {
         "name": "Rubber",
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 70, "max": 90},
-            "rainfall": {"min": 2000, "max": 4000}
-        }
+            "rainfall": {"min": 2000, "max": 4000},
+        },
     },
     "Barley": {
         "name": "Barley",
@@ -129,8 +130,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Oats": {
         "name": "Oats",
@@ -138,8 +139,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 80},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Peas": {
         "name": "Peas",
@@ -147,8 +148,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 500, "max": 800}
-        }
+            "rainfall": {"min": 500, "max": 800},
+        },
     },
     "Lentils": {
         "name": "Lentils",
@@ -156,8 +157,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 40, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Potatoes": {
         "name": "Potatoes",
@@ -165,8 +166,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Tomatoes": {
         "name": "Tomatoes",
@@ -174,8 +175,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Peppers": {
         "name": "Peppers",
@@ -183,8 +184,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Carrots": {
         "name": "Carrots",
@@ -192,8 +193,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 20},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Onions": {
         "name": "Onions",
@@ -201,8 +202,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Garlic": {
         "name": "Garlic",
@@ -210,8 +211,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Spinach": {
         "name": "Spinach",
@@ -219,8 +220,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Cabbage": {
         "name": "Cabbage",
@@ -228,8 +229,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Broccoli": {
         "name": "Broccoli",
@@ -237,8 +238,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Cauliflower": {
         "name": "Cauliflower",
@@ -246,8 +247,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Eggplant": {
         "name": "Eggplant",
@@ -255,8 +256,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Zucchini": {
         "name": "Zucchini",
@@ -264,8 +265,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Radishes": {
         "name": "Radishes",
@@ -273,8 +274,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Wheat": {
         "name": "Wheat",
@@ -282,8 +283,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1200}
-        }
+            "rainfall": {"min": 500, "max": 1200},
+        },
     },
     "Rice": {
         "name": "Rice",
@@ -291,8 +292,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 35},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 800, "max": 2000}
-        }
+            "rainfall": {"min": 800, "max": 2000},
+        },
     },
     "Corn": {
         "name": "Corn",
@@ -300,8 +301,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 18, "max": 30},
             "humidity": {"min": 50, "max": 75},
-            "rainfall": {"min": 500, "max": 1200}
-        }
+            "rainfall": {"min": 500, "max": 1200},
+        },
     },
     "Barley": {
         "name": "Barley",
@@ -309,8 +310,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Soybean": {
         "name": "Soybean",
@@ -318,8 +319,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Potato": {
         "name": "Potato",
@@ -327,8 +328,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 500, "max": 1000}
-        }
+            "rainfall": {"min": 500, "max": 1000},
+        },
     },
     "Maize": {
         "name": "Maize",
@@ -336,8 +337,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 18, "max": 30},
             "humidity": {"min": 50, "max": 75},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Millet": {
         "name": "Millet",
@@ -345,8 +346,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Sugarcane": {
         "name": "Sugarcane",
@@ -354,8 +355,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 1500, "max": 3000}
-        }
+            "rainfall": {"min": 1500, "max": 3000},
+        },
     },
     "Peas": {
         "name": "Peas",
@@ -363,8 +364,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 500, "max": 800}
-        }
+            "rainfall": {"min": 500, "max": 800},
+        },
     },
     "Cotton": {
         "name": "Cotton",
@@ -372,8 +373,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 21, "max": 35},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 500, "max": 1500}
-        }
+            "rainfall": {"min": 500, "max": 1500},
+        },
     },
     "Sorghum": {
         "name": "Sorghum",
@@ -381,8 +382,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 300, "max": 700}
-        }
+            "rainfall": {"min": 300, "max": 700},
+        },
     },
     "Lentil": {
         "name": "Lentil",
@@ -390,8 +391,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 40, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Oats": {
         "name": "Oats",
@@ -399,8 +400,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Tomato": {
         "name": "Tomato",
@@ -408,8 +409,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Carrot": {
         "name": "Carrot",
@@ -417,8 +418,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 20},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Onion": {
         "name": "Onion",
@@ -426,8 +427,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Garlic": {
         "name": "Garlic",
@@ -435,8 +436,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 25},
             "humidity": {"min": 40, "max": 60},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
     "Spinach": {
         "name": "Spinach",
@@ -444,8 +445,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 60, "max": 80},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Cabbage": {
         "name": "Cabbage",
@@ -453,8 +454,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Broccoli": {
         "name": "Broccoli",
@@ -462,8 +463,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Cauliflower": {
         "name": "Cauliflower",
@@ -471,8 +472,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 15, "max": 25},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 600, "max": 1200}
-        }
+            "rainfall": {"min": 600, "max": 1200},
+        },
     },
     "Eggplant": {
         "name": "Eggplant",
@@ -480,8 +481,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Zucchini": {
         "name": "Zucchini",
@@ -489,8 +490,8 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 20, "max": 30},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 400, "max": 800}
-        }
+            "rainfall": {"min": 400, "max": 800},
+        },
     },
     "Radishes": {
         "name": "Radishes",
@@ -498,10 +499,11 @@ CROP_DATA = {
         "optimal_conditions": {
             "temperature": {"min": 10, "max": 20},
             "humidity": {"min": 50, "max": 70},
-            "rainfall": {"min": 300, "max": 600}
-        }
+            "rainfall": {"min": 300, "max": 600},
+        },
     },
 }
+
 
 def load_crop_yield_data(file_path):
     """Load crop yield data from a CSV file."""
@@ -511,22 +513,24 @@ def load_crop_yield_data(file_path):
         print(f"Error loading crop yield data: {str(e)}")
         return pd.DataFrame()
 
+
 def average_yield_per_crop(data):
     """Calculate average yield per crop."""
     try:
-        return data.groupby('Crop')['Yield'].mean()
+        return data.groupby("Crop")["Yield"].mean()
     except Exception as e:
         print(f"Error calculating average yield: {str(e)}")
         return pd.Series()
 
+
 # Load the dataset
-crop_yield_data = load_crop_yield_data('data/crop_yield.csv')
+crop_yield_data = load_crop_yield_data("data/crop_yield.csv")
 
 # Calculate average yield
 average_yields = average_yield_per_crop(crop_yield_data)
 
 # Add crops from crop_yields.csv to the CROP_DATA structure
-for crop in crop_yield_data['Crop'].unique():
+for crop in crop_yield_data["Crop"].unique():
     if crop not in CROP_DATA:
         CROP_DATA[crop] = {
             "name": crop,
@@ -534,6 +538,6 @@ for crop in crop_yield_data['Crop'].unique():
             "optimal_conditions": {
                 "temperature": {"min": 0, "max": 0},
                 "humidity": {"min": 0, "max": 0},
-                "rainfall": {"min": 0, "max": 0}
-            }
+                "rainfall": {"min": 0, "max": 0},
+            },
         }
