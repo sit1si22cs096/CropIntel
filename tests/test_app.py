@@ -2,9 +2,10 @@
 Basic tests for the CropSmart Flask application
 """
 
-import pytest
-import sys
 import os
+import sys
+
+import pytest
 
 # Add the parent directory to the path so we can import app
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -23,10 +24,10 @@ def test_app_imports():
 
 def test_app_configuration():
     """Test basic app configuration"""
-    import app
-
     # Test that the app is a Flask instance
     from flask import Flask
+
+    import app
 
     assert isinstance(app.app, Flask), "app should be a Flask instance"
 
@@ -51,8 +52,8 @@ def test_model_paths():
 def test_data_imports():
     """Test that data modules can be imported"""
     try:
-        from data.location_data import get_states, get_districts, get_taluks
         from data.crop_data import CROP_DATA, load_crop_yield_data
+        from data.location_data import get_districts, get_states, get_taluks
 
         # Basic checks that functions exist
         assert callable(get_states), "get_states should be callable"

@@ -1,11 +1,12 @@
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from skimage.feature import hog
-from skimage.transform import resize
 from skimage.color import rgb2gray
 from skimage.exposure import equalize_hist
-from data.disease_data import PLANT_DISEASES
+from skimage.feature import hog
+from skimage.transform import resize
+from sklearn.ensemble import RandomForestClassifier
+
 from data.crop_data import get_crop_diseases
+from data.disease_data import PLANT_DISEASES
 
 
 class PlantDiseaseModel:

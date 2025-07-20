@@ -1,13 +1,15 @@
-from flask import Flask, render_template, request, jsonify
-import joblib
-import pandas as pd
-import numpy as np
-from data.location_data import get_states, get_districts, get_taluks, get_weather_for_location
-from data.crop_data import CROP_DATA, load_crop_yield_data, average_yield_per_crop
-from train_model import train_model
+import json
 import logging
 import os
-import json
+
+import joblib
+import numpy as np
+import pandas as pd
+from flask import Flask, jsonify, render_template, request
+
+from data.crop_data import CROP_DATA, average_yield_per_crop, load_crop_yield_data
+from data.location_data import get_districts, get_states, get_taluks, get_weather_for_location
+from train_model import train_model
 
 app = Flask(__name__)
 

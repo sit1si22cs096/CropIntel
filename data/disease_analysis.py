@@ -1,9 +1,10 @@
+import logging
 import os
 import random
-import logging
-from PIL import Image
+
 import numpy as np
 import torch
+from PIL import Image
 from torchvision import models, transforms
 
 # Set up logging

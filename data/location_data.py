@@ -1,7 +1,7 @@
 """Location data for India including states, districts, and taluks"""
 
-from datetime import datetime
 import random
+from datetime import datetime
 
 # Location data structure
 INDIA_LOCATIONS = {

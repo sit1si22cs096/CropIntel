@@ -4,10 +4,10 @@ CI/CD Validation Script for CropSmart
 This script validates that all CI/CD components are properly configured
 """
 
-import os
-import sys
-import subprocess
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 
 
