@@ -2,6 +2,3 @@
 exclude_dirs = tests,.git,__pycache__,.pytest_cache,venv,env,.venv,.env
 
 skips = B101,B104,B113,B602
-
-confidence = MEDIUM
-severity = MEDIUM
