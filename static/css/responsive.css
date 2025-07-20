@@ -1,0 +1,215 @@
+/* CropSmart Mobile Responsive Styles */
+
+/* Base responsive utilities */
+.mobile-hidden {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Tablet styles (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar-brand {
+        font-size: 1.2rem !important;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Container spacing */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Typography */
+    h1, .display-4 {
+        font-size: 1.75rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .lead {
+        font-size: 1rem !important;
+    }
+    
+    /* Cards */
+    .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    /* Forms */
+    .form-control, 
+    .form-select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px 15px !important;
+    }
+    
+    .form-control[type="file"] {
+        padding: 8px 15px !important;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 12px 20px !important;
+        font-size: 16px !important;
+        min-height: 44px; /* Touch-friendly */
+    }
+    
+    .btn-lg {
+        padding: 15px 25px !important;
+        font-size: 18px !important;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Tables */
+    .table-responsive {
+        font-size: 14px;
+    }
+    
+    /* Utility classes */
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+    
+    /* Spacing adjustments */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Mobile styles (576px and below) */
+@media (max-width: 576px) {
+    /* Typography */
+    h1, .display-4 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.3rem !important;
+    }
+    
+    h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Cards */
+    .card {
+        margin-bottom: 15px !important;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+    
+    /* Forms */
+    .form-control, 
+    .form-select {
+        padding: 10px 15px !important;
+    }
+    
+    /* Buttons */
+    .btn {
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+    
+    .btn:first-child {
+        margin-top: 0 !important;
+    }
+    
+    .btn-group .btn {
+        width: auto !important;
+    }
+    
+    /* Navigation */
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+    
+    /* Grid adjustments */
+    .col-sm-12 {
+        margin-bottom: 15px;
+    }
+    
+    /* Spacing */
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Feature icons */
+    .feature-icon {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .btn, 
+    .form-control, 
+    .form-select,
+    .nav-link {
+        min-height: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card:hover {
+        transform: none !important;
+    }
+    
+    .btn:hover {
+        transform: none !important;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        margin-top: 10px !important;
+    }
+    
+    .navbar {
+        padding: 0.25rem 0 !important;
+    }
+    
+    .py-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ensure crisp images on retina displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}

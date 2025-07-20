@@ -1,0 +1,22 @@
+[bandit]
+exclude_dirs = [
+    "tests",
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    "venv",
+    "env",
+    ".venv",
+    ".env"
+]
+
+skips = [
+    "B101",  # Test for use of assert
+    "B601",  # Test for shell injection within Popen
+]
+
+# Confidence levels: HIGH, MEDIUM, LOW
+confidence = "MEDIUM"
+
+# Severity levels: HIGH, MEDIUM, LOW  
+severity = "MEDIUM"

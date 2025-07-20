@@ -68,6 +68,13 @@
         .bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
             transform: none !important;
         }
+        
+        /* Mobile Responsive - Minimal adjustments */
+        @media (max-width: 576px) {
+            .form-control, .form-select {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
     </style>
 </head>
 <body>

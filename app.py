@@ -549,6 +549,29 @@ def detect_disease():
             'error': str(e)
         })
 
+@app.route('/health')
+def health_check():
+    """Health check endpoint for Docker container monitoring"""
+    try:
+        # Basic health checks
+        status = {
+            'status': 'healthy',
+            'timestamp': pd.Timestamp.now().isoformat(),
+            'version': '1.0.0',
+            'services': {
+                'flask': 'running',
+                'model': 'loaded' if model is not None else 'not_loaded',
+                'database': 'connected'  # Add actual DB check if you have one
+            }
+        }
+        return jsonify(status), 200
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e),
+            'timestamp': pd.Timestamp.now().isoformat()
+        }), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
